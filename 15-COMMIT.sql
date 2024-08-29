@@ -1,0 +1,4 @@
+
+COMMIT;
+INSERT INTO tb_medidas
+VALUES(2,'KGS', 'KILOGRAMOS');

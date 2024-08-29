@@ -1,0 +1,39 @@
+
+/*
+::: OPERADORES :::
+* OPERADORES ARITMETICOS
+* OPERADORES RELACIONALES O DE COMPARACIÓN
+* OPERADORES DE CONCATENACION 
+* OPERADORES LOGICOS
+
+*/
+
+CREATE TABLE TB_NOTAS_ALUMNOS
+(
+   CODIGO_AL NUMBER(3,0),
+   NOMBRE_AL VARCHAR2(50),
+   CURSO VARCHAR2(30),
+   NOTA1 NUMBER(2,0),
+   NOTA2 NUMBER(2,0),
+   NOTA3 NUMBER(2,0),
+   PROMEDIO  NUMBER(5,2)
+);
+
+SELECT * FROM tb_notas_alumnos;
+
+INSERT ALL 
+INTO tb_notas_alumnos
+VALUES(1,'CARLOS','MATEMATICA', 13, 14, 17,0)
+INTO tb_notas_alumnos
+VALUES(2,'MARIA', 'MATEMATICA', 15,11,15,0)
+INTO tb_notas_alumnos
+VALUES(3,'CESAR','MATEMATICA', 16,13,10,0)
+SELECT * FROM dual;
+
+SELECT codigo_al,nombre_al,(NOTA1 + NOTA2 + NOTA3) AS "PROMEDIO" 
+FROM tb_notas_alumnos;
+
+
+SELECT codigo_al, nombre_al, curso,
+ROUND((nota1 + nota2 + nota3)/3, 2) as PROMEDIO
+FROM tb_notas_alumnos;
